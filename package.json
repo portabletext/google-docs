@@ -1,0 +1,77 @@
+{
+  "name": "@portabletext/google-docs",
+  "version": "0.0.0",
+  "description": "Convert Portable Text to and from Google Docs",
+  "keywords": [
+    "google-docs",
+    "portable-text"
+  ],
+  "homepage": "https://www.portabletext.org",
+  "bugs": {
+    "url": "https://github.com/portabletext/google-docs/issues"
+  },
+  "license": "MIT",
+  "author": "Sanity.io <hello@sanity.io>",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/portabletext/google-docs.git"
+  },
+  "files": [
+    "dist"
+  ],
+  "type": "module",
+  "sideEffects": false,
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "source": "./src/index.ts",
+      "default": "./dist/index.js"
+    },
+    "./package.json": "./package.json"
+  },
+  "publishConfig": {
+    "exports": {
+      ".": "./dist/index.js",
+      "./package.json": "./package.json"
+    }
+  },
+  "scripts": {
+    "build": "pkg-utils build --strict --check",
+    "check:fallow": "fallow dead-code",
+    "check:format": "oxfmt --check .",
+    "check:knip": "NODE_OPTIONS=\"$NODE_OPTIONS --conditions=source\" knip",
+    "check:lint": "oxlint",
+    "check:types": "tsc",
+    "check:types:watch": "tsc --watch",
+    "clean": "del dist && del node_modules",
+    "dev": "pkg-utils watch",
+    "format": "oxfmt .",
+    "lint:fix": "oxlint --fix",
+    "prepublishOnly": "pnpm build",
+    "release": "pnpm build && changeset publish",
+    "test": "vitest --run",
+    "test:unit": "vitest --run --project unit",
+    "test:unit:watch": "vitest --project unit",
+    "test:watch": "vitest"
+  },
+  "devDependencies": {
+    "@changesets/changelog-github": "^1.0.1",
+    "@changesets/cli": "^3.0.3",
+    "@sanity/pkg-utils": "^14.0.0",
+    "@sanity/tsconfig": "^2.2.1",
+    "@types/node": "^26",
+    "del-cli": "^8.0.1",
+    "fallow": "3.48.0",
+    "knip": "6.48.0",
+    "oxfmt": "^0.80.0",
+    "oxlint": "^1.95.0",
+    "pkg-pr-new": "^0.0.94",
+    "typescript": "^7.0.2",
+    "vite": "^8.3.8",
+    "vitest": "^5.1.1"
+  },
+  "engines": {
+    "node": ">=22.12"
+  },
+  "packageManager": "pnpm@12.23.0"
+}

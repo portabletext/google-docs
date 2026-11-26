@@ -1,0 +1,6 @@
+.vscode
+.vitest
+dist
+node_modules
+*.tgz
+coverage
