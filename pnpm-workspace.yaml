@@ -2,6 +2,7 @@ allowBuilds:
   esbuild: false
 minimumReleaseAge: 4320
 minimumReleaseAgeExclude:
+  - "@portabletext/*"
   - "@sanity/*"
   - "@types/*"
   - "@typescript/*"
