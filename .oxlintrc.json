@@ -1,0 +1,41 @@
+{
+  "plugins": ["typescript", "unicorn", "oxc", "vitest"],
+  "jsPlugins": [
+    {
+      "name": "pte",
+      "specifier": "./oxlint-plugins/pte.js"
+    }
+  ],
+  "categories": {
+    "correctness": "off"
+  },
+  "rules": {
+    "vitest/consistent-test-filename": [
+      "error",
+      {
+        "allTestPattern": "\\.browser\\.test\\.[cm]?[jt]sx?$",
+        "pattern": "^$"
+      }
+    ]
+  },
+  "ignorePatterns": [
+    "**/dist/**",
+    "**/lib/**",
+    "**/coverage/**",
+    "**/tsconfig.*.json"
+  ],
+  "overrides": [
+    {
+      "files": ["**/*.test.*", "**/*.spec.*"],
+      "rules": {
+        "pte/no-weak-value-assertions": "error"
+      }
+    },
+    {
+      "files": ["**/*.test-d.ts"],
+      "rules": {
+        "require-await": "off"
+      }
+    }
+  ]
+}

@@ -1,0 +1,6 @@
+coverage
+dist
+CHANGELOG.md
+pnpm-lock.yaml
+
+.changeset/*.md

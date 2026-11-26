@@ -1,0 +1,17 @@
+allowBuilds:
+  esbuild: false
+minimumReleaseAge: 4320
+minimumReleaseAgeExclude:
+  - "@sanity/*"
+  - "@types/*"
+  - "@typescript/*"
+  - oxlint
+  - "@oxlint/*"
+  - oxfmt
+  - "@oxfmt/*"
+  - fallow@3.48.0
+  - "@fallow-cli/*"
+  - knip@6.48.0
+trustPolicy: no-downgrade
+trustPolicyExclude:
+  - rxjs@7.8.2
